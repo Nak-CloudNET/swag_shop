@@ -1,0 +1,10 @@
+Product Code,Net Unit Cost,Quantity,warehouse ID,Container No,Supplier No,Reference No,Date,Shop ID,Purchase Status,Payment Term,Payment Status,Shipping,Order Discount,Order Tax
+aaa001,10,100,1,414,6,REF/SAMPLE/B00004,5/28/2016 10:00,3,received,10,pending,0,0,0
+aaa002,10,100,1,414,6,REF/SAMPLE/B00004,,,,,,,,
+aaa003,10,100,1,414,6,REF/SAMPLE/B00004,,,,,,,,
+aaa001,10,100,1,414,402,REF/SAMPLE/B00005,5/28/2016 10:00,3,received,10,pending,0,0,0
+aaa002,10,100,1,414,402,REF/SAMPLE/B00005,,,,,,,,
+aaa003,10,100,1,414,402,REF/SAMPLE/B00005,,,,,,,,
+aaa001,10,100,1,414,404,REF/SAMPLE/B00006,5/28/2016 10:00,3,received,10,pending,0,0,0
+aaa002,10,100,1,414,404,REF/SAMPLE/B00006,,,,,,,,
+aaa003,10,100,1,414,404,REF/SAMPLE/B00006,,,,,,,,

@@ -1,0 +1,7 @@
+Product Code,Product Name,Variant,Expected,Counted
+CD1,CD1,,-5,3
+CD2,CD2,,-7,5
+CD3,CD3,,-5,2
+CD6,CD6,,-2,2
+CD7,CD7,,-2,1
+SY1,SY1,,-13,10

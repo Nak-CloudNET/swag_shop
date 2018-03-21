@@ -1,0 +1,21 @@
+Code,Name,Category Code,Unit,Cost,Price,Alert Quantity, Tax Rate Name,Tax Method,Subcategory Code,Product Variants Separated by |,Supplier1(No),Supplier2(No),Supplier3(No),Supplier4(No),Supplier5(No),Custom Field 1,Custom Field 2,Custom Field 3,Custom Field 4,Custom Field 5,Custom Field 6,Image
+PR-00001,Test Import Product 00001,c0001,Each,10,30,0,,, SC1,,,,,,,,,,,,,img (1).jpg
+PR-00002,Test Import Product 00002,c0002,Each,10,30,0,,, SC2,,,,,,,,,,,,,img (2).jpg
+PR-00003,Test Import Product 00003,c0003,Each,10,30,0,,, SC3,,,,,,,,,,,,,img (3).jpg
+PR-00004,Test Import Product 00004,c0004,Each,10,30,0,,, SC4,,,,,,,,,,,,,img (4).jpg
+PR-00005,Test Import Product 00005,c0005,Each,10,30,0,,, SC5,,,,,,,,,,,,,img (5).jpg
+PR-00006,Test Import Product 00006,c0006,Each,10,30,0,,, SC6,,,,,,,,,,,,,img (6).jpg
+PR-00007,Test Import Product 00007,c0007,Each,10,30,0,,, SC7,,,,,,,,,,,,,img (7).jpg
+PR-00008,Test Import Product 00008,c0008,Each,10,30,0,,, SC8,,,,,,,,,,,,,img (8).jpg
+PR-00009,Test Import Product 00009,c0009,Each,10,30,0,,, SC9,,,,,,,,,,,,,img (9).jpg
+PR-00010,Test Import Product 00010,c0010,Each,10,30,0,,, SC10,,,,,,,,,,,,,img (10).jpg
+PR-00011,Test Import Product 00011,c0001,Each,10,30,0,,, SC1,,,,,,,,,,,,,img (11).jpg
+PR-00012,Test Import Product 00012,c0002,Each,10,30,0,,, SC2,,,,,,,,,,,,,img (12).jpg
+PR-00013,Test Import Product 00013,c0003,Each,10,30,0,,, SC3,,,,,,,,,,,,,img (13).jpg
+PR-00014,Test Import Product 00014,c0004,Each,10,30,0,,, SC4,,,,,,,,,,,,,img (14).jpg
+PR-00015,Test Import Product 00015,c0005,Each,10,30,0,,, SC5,,,,,,,,,,,,,img (15).jpg
+PR-00016,Test Import Product 00016,c0006,Each,10,30,0,,, SC6,,,,,,,,,,,,,img (16).jpg
+PR-00017,Test Import Product 00017,c0007,Each,10,30,0,,, SC7,,,,,,,,,,,,,img (17).jpg
+PR-00018,Test Import Product 00018,c0008,Each,10,30,0,,, SC8,,,,,,,,,,,,,img (18).jpg
+PR-00019,Test Import Product 00019,c0009,Each,10,30,0,,, SC9,,,,,,,,,,,,,img (19).jpg
+PR-00020,Test Import Product 00020,c0010,Each,10,30,0,,, SC10,,,,,,,,,,,,,img (20).jpg

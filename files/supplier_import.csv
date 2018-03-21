@@ -1,0 +1,10 @@
+Product Code,Net Unit Cost,Quantity,Container No,Supplier No,Reference No,Date,Shop ID,Purchase Status,Payment Term,Payment Status,Shipping,Order Discount,Order Tax
+ball001,10,100,414,6,REF/SAMPLE/A00001,5/27/2016 15:08,3,received,10,pending,0,0,0
+ball001,10,100,414,402,REF/SAMPLE/A00002,5/27/2016 15:08,3,received,10,pending,0,0,0
+ball001,10,100,414,404,REF/SAMPLE/A00003,5/27/2016 15:08,3,received,10,pending,0,0,0
+ball002,10,100,414,6,REF/SAMPLE/A00001,5/27/2016 15:08,3,received,10,pending,0,0,0
+ball002,10,100,414,402,REF/SAMPLE/A00002,5/27/2016 15:08,3,received,10,pending,0,0,0
+ball002,10,100,414,404,REF/SAMPLE/A00003,5/27/2016 15:08,3,received,10,pending,0,0,0
+66666,10,100,414,6,REF/SAMPLE/A00001,5/27/2016 15:08,3,received,10,pending,0,0,0
+66666,10,100,414,402,REF/SAMPLE/A00002,5/27/2016 15:08,3,received,10,pending,0,0,0
+66666,10,100,414,404,REF/SAMPLE/A00003,5/27/2016 15:08,3,received,10,pending,0,0,0

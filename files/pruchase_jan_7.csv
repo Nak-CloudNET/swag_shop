@@ -1,0 +1,10 @@
+Product Code,Net Unit Cost,Quantity,Warehouse Code,Supplier No,Reference No,Date,Shop ID,Purchase Status,Payment Term,Payment Status,Shipping,Order Discount,Order Tax
+SY00381,5.5,9,WH1,6,,,,received,,Paid,,,
+SY0P382,5,10,WH1,6,,,,received,,Paid,,,
+SY0W382,5,6,WH1,6,,,,received,,Paid,,,
+SY0B382,5,8,WH1,6,,,,received,,Paid,,,
+SY00383,5.2,10,WH1,6,,,,received,,Paid,,,
+SY0B384,5.2,10,WH1,6,,,,received,,Paid,,,
+SYPP384,5.2,10,WH1,6,,,,received,,Paid,,,
+SY0P385,4.5,10,WH1,6,,,,received,,Paid,,,
+SY0W385,4.5,10,WH1,6,,,,received,,Paid,,,

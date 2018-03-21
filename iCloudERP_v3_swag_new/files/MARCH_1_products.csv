@@ -1,0 +1,13 @@
+Code,Name,Category Code,Unit,Cost,Price,Alert Quantity, Tax Rate Name,Tax Method,Subcategory Code,Product Variants Separated by |,Supplier1(No),Supplier2(No),Supplier3(No),Supplier4(No),Supplier5(No),Custom Field 1,Custom Field 2,Custom Field 3,Custom Field 4,Custom Field 5,Custom Field 6,Image
+SY0B3001,3001 BLUE SHIRT,SY,UNIT,,12.99,1,,,,,,,,,,,,,,,,
+SYDB3001,3001 DARK BLUE SHIRT,SY,UNIT,,12.99,1,,,,,,,,,,,,,,,,
+SY003002,3002 SHIRT,SY,UNIT,,14.99,1,,,,,,,,,,,,,,,,
+SY003003,3003 SHIRT,SY,UNIT,,12.99,1,,,,,,,,,,,,,,,,
+SY0B3004,3004 BLUE SHIRT,SY,UNIT,,11.99,1,,,,,,,,,,,,,,,,
+SY0W3004,3004 WHITE SHIRT,SY,UNIT,,11.99,1,,,,,,,,,,,,,,,,
+SYBB3005,3005 BLACK SHIRT,SY,UNIT,,14.99,1,,,,,,,,,,,,,,,,
+SY0B3005,3005 BLUE SHIRT,SY,UNIT,,14.99,1,,,,,,,,,,,,,,,,
+SY0G3006,3006 GRAY SHIRT,SY,UNIT,,11.99,1,,,,,,,,,,,,,,,,
+SY0B3006,3006 BLUE SHIRT,SY,UNIT,,11.99,1,,,,,,,,,,,,,,,,
+CD003007,3007 DRESS,CD,UNIT,,17.99,1,,,,,,,,,,,,,,,,
+SY004110,4110 SHIRT,SY,UNIT,,14.99,1,,,,,,,,,,,,,,,,
