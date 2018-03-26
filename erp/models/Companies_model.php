@@ -191,9 +191,9 @@ class Companies_model extends CI_Model
 
     public function getCustomerSuggestions($term, $limit = 10)
     {
-        $this->db->select("companies.id, (CASE WHEN (LENGTH(CONCAT(name, ' (', company, ')')) > 50) THEN CONCAT(LEFT (CONCAT(name, ' (', company, ')'), 50), '...') ELSE CONCAT(name, ' (', company, ')') END) as text", FALSE);
-        $this->db->where(" (erp_companies.id LIKE '%" . $term . "%' OR name LIKE '%" . $term . "%' OR company LIKE '%" . $term . "%' OR email LIKE '%" . $term . "%' OR phone LIKE '%" . $term . "%' ) ");
-		//$this->db->join('gift_cards', 'gift_cards.customer_id = companies.id', 'left');
+        $this->db->select("companies.id, (CASE WHEN (LENGTH(CONCAT(erp_companies.name, ' (', erp_companies.company, ')')) > 50) THEN CONCAT(LEFT (CONCAT(erp_companies.name, ' (', erp_companies.company, ')'), 50), '...') ELSE CONCAT(erp_companies.name, ' (', erp_companies.company, ')') END) as text, customer_groups.order_discount", FALSE);
+        $this->db->where(" (erp_companies.id LIKE '%" . $term . "%' OR erp_companies.name LIKE '%" . $term . "%' OR erp_companies.company LIKE '%" . $term . "%' OR email LIKE '%" . $term . "%' OR phone LIKE '%" . $term . "%' ) ");
+		$this->db->join('customer_groups', 'companies.customer_group_id = customer_groups.id', 'left');
 		$this->db->group_by('companies.id');
         $q = $this->db->get_where('companies', array('group_name' => 'customer'), $limit);
         if ($q->num_rows() > 0) {

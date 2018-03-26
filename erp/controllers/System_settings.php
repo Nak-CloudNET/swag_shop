@@ -1994,7 +1994,7 @@ class system_settings extends MY_Controller
 
         $this->load->library('datatables');
         $this->datatables
-            ->select("id, id as idd, name, percent")
+            ->select("id, id as idd, name, percent, order_discount")
             ->from("customer_groups")
             ->add_column("Actions", "<center><a href='" . site_url('system_settings/edit_customer_group/$1') . "' class='tip' title='" . lang("edit_customer_group") . "' data-toggle='modal' data-target='#myModal'><i class=\"fa fa-edit\"></i></a> <a href='#' class='tip po' title='<b>" . lang("delete_customer_group") . "</b>' data-content=\"<p>" . lang('r_u_sure') . "</p><a class='btn btn-danger po-delete' href='" . site_url('system_settings/delete_customer_group/$1') . "'>" . lang('i_m_sure') . "</a> <button class='btn po-close'>" . lang('no') . "</button>\"  rel='popover'><i class=\"fa fa-trash-o\"></i></a></center>", "id");
         //->unset_column('id');
@@ -2006,15 +2006,20 @@ class system_settings extends MY_Controller
     {
 
         $this->form_validation->set_rules('name', lang("group_name"), 'trim|is_unique[customer_groups.name]|required');
-		$this->form_validation->set_rules('percent', lang("group_percentage"), 'required|numeric');
+        $this->form_validation->set_rules('percent', lang("group_percentage"), 'required|numeric');
+		$this->form_validation->set_rules('order_discount', lang("order_discount_%"), 'required|numeric');
+
 		$mup=$this->input->post('makeup_cost');
-		if($mup==""){
-			$mup=0;
-		}
+        if($mup==""){
+            $mup=0;
+        }
+
         if ($this->form_validation->run() == true) {
-            $data = array('name' => $this->input->post('name'),
-                'percent' => $this->input->post('percent'),
-				'makeup_cost' => $mup
+            $data = array(
+                'name'              => $this->input->post('name'),
+                'percent'           => $this->input->post('percent'),
+                'order_discount'    => $this->input->post('order_discount'),
+				'makeup_cost'       => $mup
             );
         } elseif ($this->input->post('add_customer_group')) {
             $this->session->set_flashdata('error', validation_errors());
@@ -2044,9 +2049,11 @@ class system_settings extends MY_Controller
 
         if ($this->form_validation->run() == true) {
 
-            $data = array('name' => $this->input->post('name'),
-                'percent' => $this->input->post('percent'),
-				'makeup_cost' => $this->input->post('makeup_cost')
+            $data = array(
+                'name'              => $this->input->post('name'),
+                'percent'           => $this->input->post('percent'),
+                'order_discount'    => $this->input->post('order_discount'),
+				'makeup_cost'       => $this->input->post('makeup_cost')
             );
         } elseif ($this->input->post('edit_customer_group')) {
             $this->session->set_flashdata('error', validation_errors());

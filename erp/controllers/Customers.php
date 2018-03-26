@@ -411,7 +411,9 @@ class Customers extends MY_Controller
             return FALSE;
         }
         $limit = $this->input->get('limit', TRUE);
+        $result = $this->companies_model->getCustomerSuggestions(trim($term), $limit);
         $rows['results'] = $this->companies_model->getCustomerSuggestions(trim($term), $limit);
+        $rows['discount'] = $result[0]->order_discount;
 		
 		if ($this->Settings->member_card_expiry) {
 			$gift_card = $this->companies_model->getGiftCardByCardNUM(trim($term));

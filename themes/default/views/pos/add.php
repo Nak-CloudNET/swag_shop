@@ -708,9 +708,10 @@ if ($q->num_rows() > 0) {
 								<input type="hidden" name="loan_rate" id="loan_rate" value=""/>
 								<input type="hidden" name="loan_type" id="loan_type" value=""/>
 								<input type="hidden" name="loan_term" id="loan_term" value=""/>
-				
+				                
                                 <input name="order_tax" type="hidden" value="<?= $suspend_sale ? $suspend_sale->order_tax_id : $Settings->default_tax_rate2; ?>" id="postax2">
                                 <input name="discount" type="hidden" value="<?= $suspend_sale ? $suspend_sale->order_discount_id : ''; ?>" id="posdiscount">
+                                <input type="hidden" name="rdiscount" id="rdiscount" value="" />
                                 <input type="hidden" name="rpaidby" id="rpaidby" value="cash" style="display: none;"/>
                                 <input type="hidden" name="total_items" id="total_items" value="0" style="display: none;"/>
                                 <input type="submit" id="submit_sale" value="Submit Sale" style="display: none;"/>
@@ -2334,6 +2335,7 @@ var lang = {unexpected_value: '<?=lang('unexpected_value');?>', select_above: '<
                 },
                 results: function (data, page) {
 					if (data.results != null) {
+                        $('#rdiscount').val(data.discount + '%');
 						return {results: data.results};
 					} else {
 						return {results: [{id: '', text: 'No Match Found'}]};

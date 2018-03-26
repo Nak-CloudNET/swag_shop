@@ -13,7 +13,7 @@
                 });
                 $.ajax({'dataType': 'json', 'type': 'POST', 'url': sSource, 'data': aoData, 'success': fnCallback});
             },
-            "aoColumns": [{"bSortable": false, "mRender": checkbox}, null, null, null, {"bSortable": false}]
+            "aoColumns": [{"bSortable": false, "mRender": checkbox}, null, null, null, null, {"bSortable": false}]
         });
     });
 </script>
@@ -62,12 +62,13 @@
 							<th><?php echo $this->lang->line("id"); ?></th>
                             <th><?php echo $this->lang->line("name"); ?></th>
                             <th><?php echo $this->lang->line("percentage"); ?></th>
+                            <th><?php echo $this->lang->line("order_discount"); ?></th>
                             <th style="width:65px;"><?php echo $this->lang->line("actions"); ?></th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td colspan="5" class="dataTables_empty"><?= lang('loading_data_from_server') ?></td>
+                            <td colspan="6" class="dataTables_empty"><?= lang('loading_data_from_server') ?></td>
                         </tr>
 
                         </tbody>
