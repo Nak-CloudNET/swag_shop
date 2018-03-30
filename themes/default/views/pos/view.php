@@ -102,13 +102,7 @@ if ($modal) {
                 "<br><b>" . lang("tel") . ": " . $biller->phone . "</b>, "; 
             ?>
             <?php
-            /*
-            if ($pos_settings->cf_title2 != "" && $pos_settings->cf_value2 != "") {
-                echo $pos_settings->cf_title2 . ": " . $pos_settings->cf_value2 . ", ";
-            }
-            if ($pos_settings->cf_title1 != "" && $pos_settings->cf_value1 != "") {
-                echo $pos_settings->cf_title1 . ": " . $pos_settings->cf_value1 . "<br>";
-            } */
+           
             echo '</p></div>';
             
             if ($Settings->invoice_view == 1) { ?>
