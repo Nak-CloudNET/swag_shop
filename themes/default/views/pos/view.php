@@ -102,7 +102,7 @@ if ($modal) {
                 "<br><b>" . lang("tel") . ": " . $biller->phone . "</b>, "; 
             ?>
             <?php
-           
+
             echo '</p></div>';
             
             if ($Settings->invoice_view == 1) { ?>
@@ -196,13 +196,6 @@ if ($modal) {
 								}else{
 									echo $row->discount;
 								}
-								/*
-									if(strpos($inv->order_discount_id, '%') !== false){
-										echo $inv->order_discount_id;
-									}else{
-										echo $inv->order_discount_id . '%';
-									}
-									*/
 								
 							echo '</span> ';
 							$colspan = 6;
