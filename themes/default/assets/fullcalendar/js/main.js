@@ -114,7 +114,7 @@ $(document).ready(function(){
 
         $.each(data.buttons, function(index, button){
             $('.modal-footer').prepend('<button type="button" id="' + button.id  + '" class="btn ' + button.css + '">' + button.label + '</button>')
-        })
+        });
 
         //$('.cal_modal').modal('show');
         $('.cal_modal').appendTo("body").modal('show');

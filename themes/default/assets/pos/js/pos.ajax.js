@@ -76,10 +76,12 @@ if (suspendroom = localStorage.getItem('suspendroom')) {
 	/* ----------------------
 	 * Order Discount Handler
 	 * ---------------------- */
+
 	 $("#ppdiscount").click(function(e) {
 	 	e.preventDefault();
-	 	var dval = $('#posdiscount').val() ? $('#posdiscount').val() : '0';
-	 	$('#order_discount_input').val(dval);
+         var disc = $('#rdiscount').val() ? $('#rdiscount').val() : '0';
+         //var dval = $('#posdiscount').val() ? $('#posdiscount').val() : '0';
+         $('#order_discount_input').val(disc);
 	 	$('#dsModal').modal();
 	 });
 	 $('#dsModal').on('shown.bs.modal', function() {
@@ -89,9 +91,9 @@ if (suspendroom = localStorage.getItem('suspendroom')) {
 	 			e.preventDefault();
 	 			var ds = $('#order_discount_input').val();
 	 			if (is_valid_discount(ds)) {
-	 				$('#posdiscount').val(ds);
-	 				localStorage.removeItem('posdiscount');
-	 				localStorage.setItem('posdiscount', ds);
+                    $('#rdiscount').val(ds);
+                    localStorage.removeItem('rdiscount');
+                    localStorage.setItem('rdiscount', ds);
 	 				loadItems();
 	 			} else {
 	 				bootbox.alert(lang.unexpected_value);
@@ -107,9 +109,9 @@ if (suspendroom = localStorage.getItem('suspendroom')) {
 			return false;
 		}
 	 	if (is_valid_discount(ds)) {
-	 		$('#posdiscount').val(ds);
-	 		localStorage.removeItem('posdiscount');
-	 		localStorage.setItem('posdiscount', ds);
+            $('#rdiscount').val(ds);
+            localStorage.removeItem('rdiscount');
+            localStorage.setItem('rdiscount', ds);
 	 		loadItems();
 	 	} else {
 	 		bootbox.alert(lang.unexpected_value);
@@ -258,7 +260,7 @@ if (site.settings.tax2 != 0) {
 	$('#postax2').change(function () {
 		localStorage.setItem('postax2', $(this).val());
 		loadItems();
-		return;
+
 	});
 }
 
@@ -272,11 +274,11 @@ $('#posdiscount').focus(function () {
 		localStorage.removeItem('posdiscount');
 		localStorage.setItem('posdiscount', new_discount);
 		loadItems();
-		return;
+
 	} else {
 		$(this).val(old_posdiscount);
 		bootbox.alert(lang.unexpected_value);
-		return;
+
 	}
 
 });
@@ -555,8 +557,8 @@ $('#posdiscount').focus(function () {
 		$('#prModal').modal('hide');
 
 		loadItems();
-		return;
-	});
+
+    });
 
 	/* -----------------------
 	 * Product option change
@@ -636,7 +638,7 @@ $('#posdiscount').focus(function () {
 	 		return false;
 	 	}
 
-	 	var gc_data = new Array();
+        var gc_data = [];
 	 	gc_data[0] = gccode;
 	 	gc_data[1] = gcvalue;
 	 	gc_data[2] = gccustomer;
@@ -890,33 +892,34 @@ function loadItems() {
 			$("#bill_span").prepend(pos_head2);
 			$("#order-table").empty(); $("#bill-table").empty();
 		}
-		positems = JSON.parse(localStorage.getItem('positems'));
-			
-		/*var arr = [];
-		$.each(positems, function (i, e) {
+
+        positems = JSON.parse(localStorage.getItem('positems'));
+
+        /*var arr = [];
+        $.each(positems, function (i, e) {
             arr.push(e);
-		});
-		
-		function getVal(elm){
-			var v = $(elm).children('td').eq(1).text().toUpperCase();
-			if($.isNumeric(v)){
-				v = parseInt(v,10);
-			}
-			return v;
-		}
-		
-		arr.sort(function(a, b) {
-			
-			var A = getVal(a);
-			var B = getVal(b);
-			if(A < B) {
-				return -1;
-			}
-			if(A > B) {
-				return 1;
-			}
-			return 0;			
-		});*/
+        });
+
+        function getVal(elm){
+            var v = $(elm).children('td').eq(1).text().toUpperCase();
+            if($.isNumeric(v)){
+                v = parseInt(v,10);
+            }
+            return v;
+        }
+
+        arr.sort(function(a, b) {
+
+            var A = getVal(a);
+            var B = getVal(b);
+            if(A < B) {
+                return -1;
+            }
+            if(A > B) {
+                return 1;
+            }
+            return 0;
+        });*/
 
 		var n = 1;
 		$.each(positems, function (i, e) {
@@ -1178,8 +1181,10 @@ function loadItems() {
 		});
 	}	
 		var dis_per = '';
-		// Order level discount calculations
-		if (posdiscount = localStorage.getItem('posdiscount')) {
+
+        // Order level discount calculations
+        // if (posdiscount = localStorage.getItem('rdiscount')) {
+        if (posdiscount = $('#rdiscount').val()) {
 			var ds = posdiscount;
 			if (ds.indexOf("%") !== -1) {
 				var pds = ds.split("%");
@@ -1548,8 +1553,7 @@ function floorFigure(figure, decimals){
         decimals = 2;
     }
     return (Math.floor(figure * 100) / 100).toFixed(decimals);
-};
-
+}
 function read_card() {
 	$('.swipe').keypress( function (e) {
 		e.preventDefault();

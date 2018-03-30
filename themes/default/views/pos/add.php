@@ -708,9 +708,10 @@ if ($q->num_rows() > 0) {
 								<input type="hidden" name="loan_rate" id="loan_rate" value=""/>
 								<input type="hidden" name="loan_type" id="loan_type" value=""/>
 								<input type="hidden" name="loan_term" id="loan_term" value=""/>
-				
+
                                 <input name="order_tax" type="hidden" value="<?= $suspend_sale ? $suspend_sale->order_tax_id : $Settings->default_tax_rate2; ?>" id="postax2">
                                 <input name="discount" type="hidden" value="<?= $suspend_sale ? $suspend_sale->order_discount_id : ''; ?>" id="posdiscount">
+                                <input type="hidden" name="rdiscount" id="rdiscount" value=""/>
                                 <input type="hidden" name="rpaidby" id="rpaidby" value="cash" style="display: none;"/>
                                 <input type="hidden" name="total_items" id="total_items" value="0" style="display: none;"/>
                                 <input type="submit" id="submit_sale" value="Submit Sale" style="display: none;"/>
@@ -2188,46 +2189,48 @@ var lang = {unexpected_value: '<?=lang('unexpected_value');?>', select_above: '<
         lth = $('#left-top').height(),
         lbh = $('#left-bottom').height();
 		var bar_t = 0;
-		<?php if($layout && $layout != 1) { ?>;
-		var bar_t = 98;
-		<?php } ?>;
-		<?php if($layout == 5) {?>;
-		$('#box-item').remove();
+        <?php if($layout && $layout != 1) { ?>
+        var bar_t = 98;
+        <?php } ?>
+        <?php if($layout == 5) {?>
+        $('#box-item').remove();
 		$('#box-item #box-item').remove();
 		$('.btn_gift_card').hide();
 		cat_id=0;			
         $('#item-list').css("height", wh - bar_t - 610);
         $('#item-list').css("min-height", 265);
-		<?php } else { ?>;
-		$('#item-list').css("height", wh - bar_t - 140);
+        <?php } else { ?>
+        $('#item-list').css("height", wh - bar_t - 140);
         $('#item-list').css("min-height", 515);
-		<?php } ?>;
-		<?php if($layout == 3) {?>;
+        <?php } ?>
+        <?php if($layout == 3) {?>
         $('#left-middle').css("height", wh - lth - lbh - bar_t + 18);
 		$('#left-middle').css("min-height", 325);
 		$('#product-list').css("height", wh - lth - lbh - bar_t + 12);
-		<?php } else { ?>;
+        <?php } else { ?>
         $('#left-middle').css("height", wh - lth - lbh - bar_t - 100);
 		$('#left-middle').css("min-height", 325);
         $('#product-list').css("height", wh - lth - lbh - bar_t - 105);
-		<?php } ?>;
+        <?php } ?>
         $('#product-list').css("min-height", 320);
 		$('#suspend-slider').css("height", wh - lth - lbh - bar_t - 100);
         $('#suspend-slider').css("min-height", 555);
 		$('#suspend-list').css("height", wh - lth - lbh - bar_t - 105);
         $('#suspend-list').css("min-height", 550);
-		
-		<?php if($layout == 5) {?>;		
-		$('#product-list').css("min-height", 20);		
+
+
+        <?php if($layout == 5) {?>
+        $('#product-list').css("min-height", 20);
         $('#product-list').css("height", wh - lth - lbh - bar_t - 250);
         $('#left-middle').css("height", wh - lth - lbh - bar_t - 250);
 		$('#left-middle').css("min-height", 10);
-		<?php } ?>;
-		<?php if($layout == 1) {?>;		
-		$('#box-item').remove();
+        <?php } ?>
+        <?php if($layout == 1) {?>
+        $('#box-item').remove();
 		$('#box-item #box-item').remove();
-		cat_id=0;	
-		<?php } ?>;
+        cat_id = 0;
+
+        <?php } ?>
     }
     $(window).bind("resize", widthFunctions);
     $(document).ready(function () {
@@ -2310,6 +2313,7 @@ var lang = {unexpected_value: '<?=lang('unexpected_value');?>', select_above: '<
         }];
 		
         $('#poscustomer').val(localStorage.getItem('poscustomer')).select2({
+
             minimumInputLength: 1,
             data: [],
             initSelection: function (element, callback) {
@@ -2334,6 +2338,7 @@ var lang = {unexpected_value: '<?=lang('unexpected_value');?>', select_above: '<
                 },
                 results: function (data, page) {
 					if (data.results != null) {
+                        $('#rdiscount').val(data.discount + '%');
 						return {results: data.results};
 					} else {
 						return {results: [{id: '', text: 'No Match Found'}]};
@@ -3006,8 +3011,8 @@ var lang = {unexpected_value: '<?=lang('unexpected_value');?>', select_above: '<
 								var c_qty = $("#"+e).children("span").find(".qty").text();
 								arr_qty = Number(c_qty)+Number(qty);
 								$("#"+e).children("span").find(".qty").text(arr_qty);
-							}							
-						})
+                            }
+                        });
 				        
 						var item ='<button id="'+code+'" type="button" value="'+code+'" title="'+title+'" class="btn-prni btn-default product pos-tip" data-container="body" data-original-title="'+title+'"><img src="'+image+'" alt="'+title+'" style="width: 60px; height: 60px;" class="img-rounded"/><span>Qty :<i class="qty">'+(arr_qty)+'</i> ($ '+item_price+') '+title+'</span></button>';
 						

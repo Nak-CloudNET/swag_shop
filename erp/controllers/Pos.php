@@ -493,8 +493,8 @@ class Pos extends MY_Controller
                 krsort($products);
             }
 
-            if ($this->input->post('discount')) {
-                $order_discount_id = $this->input->post('discount');
+            if ($this->input->post('rdiscount')) {
+                $order_discount_id = $this->input->post('rdiscount');
                 $opos = strpos($order_discount_id, $percentage);
                 if ($opos !== false) {
                     $ods = explode("%", $order_discount_id);
@@ -574,7 +574,9 @@ class Pos extends MY_Controller
 				'other_cur_paid_rate' => $cur_rate->rate,
 				'saleman_by' => $saleman_id
             );
-			if($_POST['paid_by'][0] == 'depreciation'){
+
+
+            if ($_POST['paid_by'][0] == 'depreciation') {
 				$no = sizeof($_POST['no']);
 				$period = 1;
 				for($m = 0; $m < $no; $m++){

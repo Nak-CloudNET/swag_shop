@@ -121,7 +121,7 @@ if ($modal) {
 					echo lang("time_in") . " : " . $this->erp->hrld($inv->date) . "<br>";
 				echo '</div>';
 				echo '<div class="col-xs-6 font_para">';
-					echo lang("<p style='float:left;margin:0px'>invoice") . " : " . $inv->reference_no . "</p><br>";
+					echo lang("<p style='float:left;margin:0px'>Invoice") . " : " . $inv->reference_no . "</p><br>";
 				echo '</div>';
 			}else{
 				echo '<div class="col-xs-6 font_para">';
@@ -130,7 +130,7 @@ if ($modal) {
 					echo lang("time_out") . " : " . $this->erp->hrld($inv->date);
 				echo '</div>';
 				echo '<div class="col-xs-6 font_para">';
-					echo lang("<p style='float:left;margin:0px'>invoice") . " : " . $inv->reference_no . "</p><br>";
+					echo lang("<p style='float:left;margin:0px'>Invoice") . " : " . $inv->reference_no . "</p><br>";
 					echo lang("username") . " : " . $inv->username . "<br>";
 					echo lang("customer") . " : " . $inv->customer;
 				echo '</div>';
@@ -271,12 +271,11 @@ if ($modal) {
 							?>
 							<?= lang("qty"); ?>= (<?=$this->erp->formatQuantity($total_quantity)?>)
 						</th>
-						<th colspan="<?=$total_col?>" class="text-right"><?= lang("total_usd"); ?></th>
+						<th colspan="<?=$total_col?>" class="text-right"><?= lang("Total (USD)"); ?></th>
 						<th class="text-right"><?= $this->erp->formatMoney($sub_total); ?></th>
 					</tr>
 					<tr>
-						
-						<th colspan="<?=$total_cols?>" class="text-right"><?= lang("total_khm"); ?></th>
+						<th colspan="<?=$total_cols?>" class="text-right"><?= lang("Total (KHM)"); ?></th>
 						<th class="text-right">
 							<?php $total_khm = ($exchange_rate_kh_c->rate) * ($sub_total); ?>
 							<?= number_format($total_khm).'៛';?>
@@ -307,7 +306,7 @@ if ($modal) {
 					
 					<?php if ($inv->order_discount != 0 || $inv->order_tax != 0) { ?>
                     <tr>
-                        <th style="border-top:2px dotted #000;padding-right: 12px;" colspan="<?= $colspan ?>" class="text-right"><?= lang("grand_total"); ?></th>
+                        <th style="border-top:2px dotted #000;padding-right: 12px;" colspan="<?= $colspan ?>" class="text-right"><?= lang("Grand Total"); ?></th>
                         <th style="border-top:2px dotted #000" class="text-right"><?= $this->erp->formatMoney($inv->grand_total + $rounding); ?></th>
                     </tr>
                 <?php 
@@ -315,11 +314,11 @@ if ($modal) {
 				} else { ?>
 				<?php if ($inv->order_discount != 0 || $inv->order_tax != 0) { ?>
                     <tr>
-                        <th style="border-top:2px dotted #000;padding-right: 12px;" colspan="<?= $colspan ?>" class="text-right"><?= lang("grand_total_usd"); ?></th>
+                        <th style="border-top:2px dotted #000;padding-right: 12px;" colspan="<?= $colspan ?>" class="text-right"><?= lang("Grand Total (USD)"); ?></th>
                         <th style="border-top:2px dotted #000" class="text-right"><?= $this->erp->formatMoney($inv->grand_total); ?></th>
                     </tr>
 					<tr>
-                        <th style="border-top:2px dotted #000;padding-right: 12px;" colspan="<?= $colspan ?>" class="text-right"><?= lang("grand_total_khm"); ?></th>
+                        <th style="border-top:2px dotted #000;padding-right: 12px;" colspan="<?= $colspan ?>" class="text-right"><?= lang("Grand Total (KHM)"); ?></th>
                         <th style="border-top:2px dotted #000" class="text-right">
 							<?php $grand_total_khm = ($exchange_rate_kh_c->rate)*($inv->grand_total); ?>
 							<?= number_format($grand_total_khm).'៛';?>
@@ -809,16 +808,16 @@ if ($modal) {
                             $.ajax({
                                 type: "post",
                                 url: "<?= site_url('pos/email_receipt') ?>",
-                                data: {<?= $this->security->get_csrf_token_name(); ?>: "<?= $this->security->get_csrf_hash(); ?>", email: email, id: <?= $inv->id; ?>},
-                                dataType: "json",
-                                success: function (data) {
+                                data: {;<?= $this->security->get_csrf_token_name(); ?>: "<?= $this->security->get_csrf_hash(); ?>", email;: email, id;: <?= $inv->id; ?>},
+                                "json",
+                                success;: function (data) {
                                     alert(data.msg);
                                 },
                                 error: function () {
                                     alert('<?= lang('ajax_request_failed'); ?>');
                                     return false;
                                 }
-                            });
+                            })
                         }
                         return false;
                     });

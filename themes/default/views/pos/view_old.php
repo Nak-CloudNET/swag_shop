@@ -431,16 +431,16 @@
                             $.ajax({
                                 type: "post",
                                 url: "<?=site_url('pos/email_receipt')?>",
-                                data: {<?=$this->security->get_csrf_token_name();?>: "<?=$this->security->get_csrf_hash();?>", email: email, id: <?=$inv->id;?>},
-                                dataType: "json",
-                                success: function (data) {
+                                data: {;<?=$this->security->get_csrf_token_name();?>: "<?=$this->security->get_csrf_hash();?>", email;: email, id;: <?=$inv->id;?>},
+                                "json",
+                                success;: function (data) {
                                     alert(data.msg);
                                 },
                                 error: function () {
                                     alert('<?=lang('ajax_request_failed');?>');
                                     return false;
                                 }
-                            });
+                            })
                         }
                         return false;
                     });

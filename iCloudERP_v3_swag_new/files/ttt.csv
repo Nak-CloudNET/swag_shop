@@ -1,5 +1,0 @@
-Product Code,Net Unit Price,Quantity,Customer No,Warehouse Code,Reference No,Date,Shop ID,Sale Status,Payment Term,Payment Status,Shipping,Order Discount,Order Tax
-TEST666,10,1,1,WH1,Opening/00005,16/08/2016,3,completed,30,pending,0,0,0
-TEST666,10,1,1,WH1,Opening/00006,16/08/2016,3,completed,30,pending,0,0,0
-AB,10,1,1,WH1,Opening/00005,16/08/2016,3,completed,30,pending,0,0,0
-AB,10,1,1,WH1,Opening/00006,16/08/2016,3,completed,30,pending,0,0,0

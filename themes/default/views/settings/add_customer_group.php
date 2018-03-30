@@ -22,6 +22,12 @@
                 <div
                     class="controls"> <?php echo form_input('percent', '', 'class="form-control" id="percent" required="required"'); ?> </div>
             </div>
+            <div class="form-group">
+                <label for="order_discount"><?php echo $this->lang->line("order_discount_%"); ?></label>
+
+                <div
+                        class="controls"> <?php echo form_input('order_discount', '', 'class="form-control" id="order_discount" required="required"'); ?> </div>
+            </div>
 			
 			<div class="form-group">
 			   <input type="checkbox" name="makeup_cost" id="makeup_cost" class="form-control" value="1" <?php echo set_checkbox('makeup_cost', '1'); ?> >
