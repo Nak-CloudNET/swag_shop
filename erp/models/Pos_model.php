@@ -968,8 +968,9 @@ class Pos_model extends CI_Model
     }
 	public function getInvoicePOSByID($id)
     {
-        $this->db->select('sales.*, users.username');
+        $this->db->select('sales.*, users.username, companies.award_points');
 		$this->db->join('users','users.id = sales.created_by', 'left');
+        $this->db->join('companies', 'sales.customer_id = companies.id', 'left');
 		$this->db->from('sales');
 		$this->db->where(array('sales.id' => $id),1);
 		$q = $this->db->get();

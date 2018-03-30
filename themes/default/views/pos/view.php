@@ -128,6 +128,10 @@ if ($modal) {
 					echo lang("username") . " : " . $inv->username . "<br>";
 					echo lang("customer") . " : " . $inv->customer;
 				echo '</div>';
+				echo '<div class="col-xs-6 font_para"></div>';
+				echo '<div class="col-xs-6 font_para">';
+					echo lang("award_points") . " : " . $inv->award_points;
+				echo '</div>';
 			}
 			$total_disc = 0;
 			foreach ($rows as $d) {
